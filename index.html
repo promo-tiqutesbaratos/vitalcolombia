@@ -1,94 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLY7WW8YPL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-NLY7WW8YPL');
-</script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VitalColombia - Información de Servicios Públicos</title>
-<meta name="description" content="VitalColombia es un directorio informativo que facilita acceso rápido a los portales oficiales de servicios públicos en Colombia.">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VitalColombia - Acceso a Portales Oficiales de Servicios</title>
+  <meta name="description" content="VitalColombia: Acceso al portal oficial de su empresa de servicios públicos. No procesamos pagos ni solicitamos datos financieros.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0b57d0;
+      --primary-dark: #0840a0;
+      --text-color: #1a1a1a;
+      --light-gray: rgba(255,255,255,0.8);
+      --space-xl: 50px;
+      --space-l: 30px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    header { background: var(--primary-color); color: white; padding: var(--space-l) 0; text-align: center; }
+    nav ul { display: flex; justify-content: center; list-style: none; gap: 30px; }
+    nav a { color: white; text-decoration: none; font-weight: 600; }
+    .hero { background: url('https://images.unsplash.com/photo-1584270354949-1d21f3dd76bb?auto=format&fit=crop&w=1600&q=80') center/cover; color: white; text-align: center; padding: 120px 20px; }
+    .section { padding: var(--space-xl) 20px; text-align: center; }
+    .section-title { font-size: 32px; font-weight: 700; margin-bottom: 15px; color: var(--primary-color); }
+    .section-description { font-size: 18px; color: var(--text-color); max-width: 700px; margin: 0 auto 30px; }
+    .btn-primary { display: inline-block; padding: 14px 22px; background: var(--primary-color); color: white; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .services { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+    .card { background: white; width: 300px; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: left; }
+    .card-title { font-size: 20px; margin-bottom: 12px; color: var(--primary-color); }
+    .footer { background: #111; color: white; padding: 30px 20px; text-align: center; }
+    .footer-text { font-size: 14px; opacity: .8; margin-top: 10px; }
+  </style>
 </head>
 
 <body>
 
-<header class="site-header">
-    <div class="container">
-        <img src="assets/imges/vitalcolombia_logo.png" alt="VitalColombia logo" class="header-logo">
-    </div>
+<header>
+  <h1>VitalColombia</h1>
+  <p>Enlace seguro hacia portales oficiales</p>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Soporte</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="section companies-section companies-hero">
-    <div class="container">
-        <h1 class="section-title hero-title">Acceso a Empresas de Servicios Públicos</h1>
-        <p class="section-description">
-            Seleccione su empresa para ser redirigido a su portal oficial.
-        </p>
-
-        <div class="company-selector">
-            <div class="company-logos">
-                <div class="logo-item" data-company="https://pagosenlinea.grupovanti.com/">
-                    <img src="assets/imges/empresas/vanti_logo.png" alt="Vanti">
-                    <span>Vanti</span>
-                </div>
-                <div class="logo-item" data-company="https://www.enel.com.co/es.html">
-                    <img src="assets/imges/empresas/enel_logo.png" alt="Enel">
-                    <span>Enel</span>
-                </div>
-                <div class="logo-item" data-company="https://www.air-e.com/index.html">
-                    <img src="assets/imges/empresas/aire_logo.jpg" alt="Air-e">
-                    <span>Air-e</span>
-                </div>
-                <div class="logo-item" data-company="https://www.movistar.com.co/">
-                    <img src="assets/imges/empresas/movistar_logo.png" alt="Movistar">
-                    <span>Movistar</span>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="hero">
+  <h2>Encuentre el portal oficial de su servicio</h2>
+  <p>Redirección segura y sin intermediarios</p>
 </section>
 
-<section class="section about">
-    <div class="container">
-        <h2 class="section-title">Directorio Informativo</h2>
-        <p class="section-description">
-            En VitalColombia solo facilitamos el acceso a información pública de empresas de servicios en Colombia. 
-            No procesamos pagos ni manejamos información financiera de los usuarios.
-        </p>
+<section id="servicios" class="section">
+  <h2 class="section-title">Nuestros Servicios</h2>
+  <p class="section-description">
+    Acceda a los sitios oficiales de empresas de servicios públicos en Colombia.
+    No procesamos pagos ni solicitamos información financiera.
+  </p>
+
+  <div class="services">
+
+    <div class="card">
+      <h3 class="card-title">Portal de Gas</h3>
+      <p>Acceso al portal oficial para consultar o realizar trámites.</p>
+      <a href="#" target="_blank" rel="noopener" class="btn-primary">Ir al portal</a>
     </div>
+
+    <div class="card">
+      <h3 class="card-title">Portal de Agua</h3>
+      <p>Acceda al sitio autorizado de su empresa de acueducto.</p>
+      <a href="#" target="_blank" rel="noopener" class="btn-primary">Ir al portal</a>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Portal de Energía</h3>
+      <p>Encuentre el sitio oficial para trámites de energía.</p>
+      <a href="#" target="_blank" rel="noopener" class="btn-primary">Ir al portal</a>
+    </div>
+
+  </div>
 </section>
 
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2025 VitalColombia — Sitio Netamente Informativo.</p>
-        <p style="font-size: 13px; opacity: .8;">
-            VitalColombia no es una empresa de servicios públicos, no cobra a los usuarios y no realiza
-            transacciones. Toda la gestión de pagos se realiza únicamente en los sitios oficiales de cada empresa.
-        </p>
-    </div>
+<section class="section" style="background:#e9f1ff;">
+  <h2 class="section-title">Acceso a Portales Oficiales</h2>
+  <p class="section-description">Lo llevamos directamente a la página autorizada según su proveedor.</p>
+  <a href="#" class="btn-primary">Ir al portal oficial</a>
+</section>
+
+<footer class="footer" id="contacto">
+  <p>VitalColombia © 2025 | Todos los derechos reservados</p>
+  <p class="footer-text">No procesamos pagos ni recopilamos datos financieros.</p>
 </footer>
-
-<script>
-lucide.createIcons();
-
-document.querySelectorAll('.logo-item').forEach(item => {
-    item.addEventListener('click', function() {
-        window.open(this.getAttribute('data-company'), '_blank');
-    });
-});
-</script>
 
 </body>
 </html>
