@@ -1,211 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<!-- Google tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLY7WW8YPL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-NLY7WW8YPL');
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>VitalColombia - Acceso directo a portales oficiales</title>
-<meta name="description" content="Portal informativo. Acceda directamente al sitio oficial de su proveedor de servicios públicos.">
-<meta name="keywords" content="servicios públicos Colombia, pagar servicios, gas, energía, internet, agua">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
+<title>Consulta de Servicios Públicos</title>
 
 <style>
   body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f7faff;
-    color: #053070;
+    font-family: Arial, sans-serif;
+    background: #f5f9ff;
+    color: #003366;
   }
-  .container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-  }
-  .site-header {
-    background: white;
-    padding: 15px 0;
-    border-bottom: 1px solid #e1e6ef;
+
+  h2 {
     text-align: center;
+    margin-top: 20px;
   }
-  .header-logo {
-    width: 180px;
-    height: auto;
-  }
-  .info-bar {
-    background: #e5f0ff;
-    padding: 12px;
-    font-size: 14px;
-    text-align: center;
-    border-bottom: 1px solid #bdd4ff;
-  }
-  .section-title {
-    font-size: 26px;
-    font-weight: 700;
-    text-align: center;
-  }
-  .section-description {
-    text-align: center;
-    font-size: 16px;
-    margin-top: -5px;
-  }
-  .companies-section {
-    padding: 30px 0;
-  }
-  .company-logos {
+
+  .providers-grid {
     display: grid;
+    gap: 15px;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 18px;
-    margin-top: 30px;
   }
-  .logo-item {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 18px;
+
+  .provider-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
     text-align: center;
     cursor: pointer;
-    transition: transform .2s, box-shadow .2s;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: transform .2s ease, box-shadow .2s ease;
+    border: 2px solid transparent;
   }
-  .logo-item img {
-    max-width: 70px;
-    width: 100%;
+
+  .provider-card:hover {
+    transform: translateY(-4px);
+    border-color: #0066ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  }
+
+  .provider-card img {
+    width: 85px;
     height: auto;
-    margin-bottom: 8px;
+    display: block;
+    margin: 0 auto 10px;
   }
-  .logo-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+
+  .provider-card p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
   }
-  footer {
-    background: #053070;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+
+  /* Botón consultar */
+  .consult-btn {
+    background: #0066ff;
+    color: #fff;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
   }
-  .disclaimer {
-    font-size: 12px;
-    margin-top: 6px;
-  }
-  @media (max-width: 480px) {
-    .company-logos {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .logo-item img {
-      max-width: 55px;
-    }
-  }
-  @media (min-width: 1024px) {
-    .company-logos {
-      grid-template-columns: repeat(4, 1fr);
-    }
+
+  .consult-btn:hover {
+    background: #004FCC;
   }
 </style>
-
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <img src="assets/imges/vitalcolombia_logo.png" class="header-logo" alt="VitalColombia">
-  </div>
-</header>
+<h2>Selecciona tu Proveedor</h2>
 
-<div class="info-bar">
-  VitalColombia es un sitio informativo independiente. <strong>No recopilamos datos ni procesamos pagos.</strong>
+<div class="providers-grid">
+
+  <!-- VANTI -->
+  <div class="provider-card" onclick="selectProvider('Vanti')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Vanti_logo.svg/512px-Vanti_logo.svg.png" alt="Vanti">
+    <p>Vanti</p>
+  </div>
+
+  <!-- ENEL -->
+  <div class="provider-card" onclick="selectProvider('Enel')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Enel_Group_logo.svg/2560px-Enel_Group_logo.svg.png" alt="Enel">
+    <p>Enel</p>
+  </div>
+
+  <!-- AIR-E -->
+  <div class="provider-card" onclick="selectProvider('Air-e')">
+    <img src="https://www.air-e.com/images/logo-aire-dark.png" alt="Air-e">
+    <p>Air-e</p>
+  </div>
+
+  <!-- MOVISTAR -->
+  <div class="provider-card" onclick="selectProvider('Movistar')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Movistar_logo_2020.svg" alt="Movistar">
+    <p>Movistar</p>
+  </div>
+
 </div>
 
-<section class="section companies-section">
-  <div class="container">
-    <h1 class="section-title hero-title">Seleccione su Empresa de Servicios</h1>
-    <p class="section-description">Será dirigido al sitio oficial del proveedor.</p>
-
-    <div class="company-logos">
-      
-      <!-- Gas -->
-      <div class="logo-item" data-url="https://pagosenlinea.grupovanti.com/">
-        <img src="assets/imges/empresas/vanti_logo.png"><span>Vanti</span>
-      </div>
-      <div class="logo-item" data-url="https://www.gdo.com.co/">
-        <img src="assets/imges/empresas/gases_occidente.png"><span>Gases de Occidente</span>
-      </div>
-      <div class="logo-item" data-url="https://www.surtigas.com.co/">
-        <img src="assets/imges/empresas/surtigas_logo.png"><span>Surtigas</span>
-      </div>
-
-      <!-- Energía -->
-      <div class="logo-item" data-url="https://www.enel.com.co/es.html">
-        <img src="assets/imges/empresas/enel_logo.png"><span>Enel</span>
-      </div>
-      <div class="logo-item" data-url="https://www.air-e.com/">
-        <img src="assets/imges/empresas/aire_logo.png"><span>Air-e</span>
-      </div>
-      <div class="logo-item" data-url="https://www.afinia.com.co/">
-        <img src="assets/imges/empresas/afinia_logo.png"><span>Afinia</span>
-      </div>
-      <div class="logo-item" data-url="https://www.epm.com.co/">
-        <img src="assets/imges/empresas/epm_logo.png"><span>EPM</span>
-      </div>
-
-      <!-- Internet / TV -->
-      <div class="logo-item" data-url="https://www.movistar.com.co/">
-        <img src="assets/imges/empresas/movistar_logo.png"><span>Movistar</span>
-      </div>
-      <div class="logo-item" data-url="https://www.claro.com.co/personas/">
-        <img src="assets/imges/empresas/claro_logo.png"><span>Claro</span>
-      </div>
-      <div class="logo-item" data-url="https://www.tigo.com.co/">
-        <img src="assets/imges/empresas/tigo_logo.png"><span>Tigo</span>
-      </div>
-      <div class="logo-item" data-url="https://www.etb.com/">
-        <img src="assets/imges/empresas/etb_logo.png"><span>ETB</span>
-      </div>
-
-      <!-- Agua / Aseo -->
-      <div class="logo-item" data-url="https://veolia.com.co/">
-        <img src="assets/imges/empresas/veolia_logo.png"><span>Veolia</span>
-      </div>
-      <div class="logo-item" data-url="https://www.emcali.com.co/">
-        <img src="assets/imges/empresas/emcali_logo.png"><span>Emcali</span>
-      </div>
-      <div class="logo-item" data-url="https://acueducto.com.co/">
-        <img src="assets/imges/empresas/acueducto_bogota.png"><span>Acueducto Bogotá</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 VitalColombia. Todos los derechos reservados.</p>
-    <p class="disclaimer">VitalColombia no es una entidad financiera. No gestionamos pagos ni guardamos información.</p>
-  </div>
-</footer>
+<button class="consult-btn" onclick="goToConsult()">Consultar Servicio</button>
 
 <script>
-lucide.createIcons();
+  let selectedProvider = null;
 
-// Tracking + Redirección
-document.querySelectorAll('.logo-item').forEach(item=>{
-  item.addEventListener('click', ()=>{
-    const url = item.getAttribute('data-url');
-    gtag('event', 'click_proveedor', { proveedor: url });
-    window.open(url, '_blank', 'noopener,noreferrer');
-  });
-});
+  function selectProvider(provider) {
+    selectedProvider = provider;
+    alert("Seleccionaste: " + provider);
+  }
+
+  function goToConsult() {
+    if (!selectedProvider) {
+      alert("Por favor, selecciona un proveedor antes de continuar.");
+    } else {
+      // Aquí puedes redirigir según proveedor
+      alert("Redirigiendo a consulta de: " + selectedProvider);
+      // window.location.href = "ruta-de-consulta-" + selectedProvider;
+    }
+  }
 </script>
 
 </body>
