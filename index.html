@@ -89,12 +89,58 @@
 </section>
 
 <!-- ✅ Footer corregido -->
+<!-- ✅ Footer actualizado -->
 <footer class="footer">
   <div class="container">
     <p>© 2025 VitalColombia — Directorio Informativo Independiente</p>
     <p><strong>No procesamos pagos ni solicitamos información financiera.</strong></p>
+
+    <div class="footer-links">
+      <a href="#" onclick="openModal('privacyModal')">Política de Privacidad</a> |
+      <a href="#" onclick="openModal('termsModal')">Términos y Condiciones</a>
+    </div>
   </div>
 </footer>
+
+<!-- ✅ Modales legales requeridos por Google Ads -->
+<div id="privacyModal" class="legal-modal">
+  <div class="modal-content">
+    <h2>Política de Privacidad</h2>
+    <p>
+      VitalColombia es un directorio informativo independiente. No procesamos pagos,
+      ni recopilamos datos financieros ni personales sensibles. 
+      Cualquier consulta o gestión se realiza directamente en los portales oficiales
+      de cada proveedor. Utilizamos información básica como datos de navegación
+      con el fin de mejorar la experiencia de usuario.
+    </p>
+    <button onclick="closeModal('privacyModal')">Cerrar</button>
+  </div>
+</div>
+
+<div id="termsModal" class="legal-modal">
+  <div class="modal-content">
+    <h2>Términos y Condiciones</h2>
+    <p>
+      Al utilizar nuestro sitio, usted entiende que VitalColombia no pertenece,
+      representa ni actúa en nombre de empresas de servicios públicos. 
+      La consulta o gestión se realiza únicamente en los portales oficiales
+      a los cuales redirigimos. No garantizamos disponibilidad o funcionamiento
+      de sitios externos.
+    </p>
+    <button onclick="closeModal('termsModal')">Cerrar</button>
+  </div>
+</div>
+
+<!-- ✅ Script para abrir/cerrar modales -->
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = 'flex';
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+</script>
+
 
 <!-- ✅ Scripts -->
 <script>
