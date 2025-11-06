@@ -1,131 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consulta de Servicios Públicos</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NLY7WW8YPL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NLY7WW8YPL');
+  </script>
 
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f9ff;
-    color: #003366;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  h2 {
-    text-align: center;
-    margin-top: 20px;
-  }
+  <!-- ✅ META CORREGIDOS PARA GOOGLE ADS -->
+  <meta name="description" content="VitalColombia es un directorio informativo que facilita el acceso a los portales oficiales de electricidad, gas y telecomunicaciones en Colombia. No procesamos pagos ni gestionamos facturación.">
+  <meta name="keywords" content="servicios públicos, energía, gas, telecomunicaciones, Colombia, portales oficiales">
 
-  .providers-grid {
-    display: grid;
-    gap: 15px;
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
+  <title>VitalColombia - Acceso a Servicios Públicos</title>
 
-  .provider-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform .2s ease, box-shadow .2s ease;
-    border: 2px solid transparent;
-  }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  .provider-card:hover {
-    transform: translateY(-4px);
-    border-color: #0066ff;
-    box-shadow: 0 4px 12px rgba(0,0,0,.12);
-  }
+  <!-- ✅ RUTA CSS CORREGIDA -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
-  .provider-card img {
-    width: 85px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
-  }
-
-  .provider-card p {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  /* Botón consultar */
-  .consult-btn {
-    background: #0066ff;
-    color: #fff;
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 16px;
-  }
-
-  .consult-btn:hover {
-    background: #004FCC;
-  }
-</style>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-<h2>Selecciona tu Proveedor</h2>
-
-<div class="providers-grid">
-
-  <!-- VANTI -->
-  <div class="provider-card" onclick="selectProvider('Vanti')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Vanti_logo.svg/512px-Vanti_logo.svg.png" alt="Vanti">
-    <p>Vanti</p>
+<!-- ✅ Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <img src="assets/images/vitalcolombia_logo.png" alt="VitalColombia Logo" class="header-logo">
+    </div>
   </div>
+</header>
 
-  <!-- ENEL -->
-  <div class="provider-card" onclick="selectProvider('Enel')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Enel_Group_logo.svg/2560px-Enel_Group_logo.svg.png" alt="Enel">
-    <p>Enel</p>
-  </div>
-
-  <!-- AIR-E -->
-  <div class="provider-card" onclick="selectProvider('Air-e')">
-    <img src="https://www.air-e.com/images/logo-aire-dark.png" alt="Air-e">
-    <p>Air-e</p>
-  </div>
-
-  <!-- MOVISTAR -->
-  <div class="provider-card" onclick="selectProvider('Movistar')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Movistar_logo_2020.svg" alt="Movistar">
-    <p>Movistar</p>
-  </div>
-
+<!-- ✅ Aviso visible para Google Ads -->
+<div class="legal-notice">
+  VitalColombia es un directorio informativo. <strong>No procesamos pagos ni solicitamos datos financieros.</strong>
+  Usted será redirigido al portal oficial del proveedor seleccionado.
 </div>
 
-<button class="consult-btn" onclick="goToConsult()">Consultar Servicio</button>
+<!-- ✅ Selección de empresa -->
+<section class="section companies-section companies-hero">
+  <div class="container">
+    <h1 class="section-title hero-title">Seleccione su Empresa de Servicios</h1>
+    <p class="section-description">Elija su proveedor y será redirigido directamente al <strong>portal oficial</strong>.</p>
 
+    <div class="company-selector">
+      <select id="companySelect" class="company-dropdown" aria-label="Seleccionar Proveedor">
+        <option value="" selected disabled>Seleccione una empresa...</option>
+        <option value="https://pagosenlinea.grupovanti.com/">Vanti</option>
+        <option value="https://www.enel.com.co/es.html">Enel</option>
+        <option value="https://www.air-e.com/">Air-e</option>
+        <option value="https://www.movistar.com.co/">Movistar</option>
+      </select>
+
+      <div class="company-logos">
+        <div class="logo-item" data-company="https://pagosenlinea.grupovanti.com/">
+          <img src="assets/images/empresas/vanti_logo.png" alt="Vanti" class="company-logo">
+          <span>Vanti</span>
+        </div>
+        <div class="logo-item" data-company="https://www.enel.com.co/es.html">
+          <img src="assets/images/empresas/enel_logo.png" alt="Enel" class="company-logo">
+          <span>Enel</span>
+        </div>
+        <div class="logo-item" data-company="https://www.air-e.com/">
+          <img src="assets/images/empresas/aire_logo.jpg" alt="Air-e" class="company-logo">
+          <span>Air-e</span>
+        </div>
+        <div class="logo-item" data-company="https://www.movistar.com.co/">
+          <img src="assets/images/empresas/movistar_logo.png" alt="Movistar" class="company-logo">
+          <span>Movistar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Información -->
+<section class="section about">
+  <div class="container">
+    <h2 class="section-title">Acceso rápido y seguro</h2>
+    <p class="section-description">
+      Dirigimos a los usuarios únicamente a <strong>portales oficiales</strong> de servicios públicos autorizados.
+    </p>
+  </div>
+</section>
+
+<!-- ✅ CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-title">Seleccione un proveedor y continúe</h2>
+    <p class="cta-description">Haga clic en el logo o seleccione en el menú desplegable para continuar.</p>
+  </div>
+</section>
+
+<!-- ✅ Footer corregido -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 VitalColombia — Directorio Informativo Independiente</p>
+    <p><strong>No procesamos pagos ni solicitamos información financiera.</strong></p>
+  </div>
+</footer>
+
+<!-- ✅ Scripts -->
 <script>
-  let selectedProvider = null;
+  lucide.createIcons();
 
-  function selectProvider(provider) {
-    selectedProvider = provider;
-    alert("Seleccionaste: " + provider);
-  }
-
-  function goToConsult() {
-    if (!selectedProvider) {
-      alert("Por favor, selecciona un proveedor antes de continuar.");
-    } else {
-      // Aquí puedes redirigir según proveedor
-      alert("Redirigiendo a consulta de: " + selectedProvider);
-      // window.location.href = "ruta-de-consulta-" + selectedProvider;
+  document.getElementById("companySelect").addEventListener("change", function () {
+    if (this.value) {
+      window.open(this.value, "_blank", "noopener,noreferrer");
+      this.selectedIndex = 0;
     }
-  }
+  });
+
+  document.querySelectorAll(".logo-item").forEach(item => {
+    item.addEventListener("click", function () {
+      const url = this.getAttribute("data-company");
+      if (url) window.open(url, "_blank", "noopener,noreferrer");
+    });
+  });
 </script>
 
 </body>
